@@ -1,14 +1,24 @@
-import { Text, View } from 'react-native'
-import React, { Component } from 'react'
+import { SafeAreaView, View, Text, StyleSheet } from 'react-native';
+import React from 'react';
+import { Stack } from 'expo-router';
 
-export class index extends Component {
-  render() {
-    return (
-      <View>
-        <Text>finance tracking app</Text>
-      </View>
-    )
-  }
-}
+const index = () => {
+  return (
+    <>
+      <Stack.Screen options={{ headerShown: false }} />
+      <SafeAreaView style={styles.container}>
+        <Text>Finance tracking app</Text>
+      </SafeAreaView>
+    </>
+  );
+};
 
-export default index
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingTop: 20, // Extra padding if needed
+    paddingHorizontal: 16,
+  },
+});
+
+export default index;
