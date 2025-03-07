@@ -1,7 +1,7 @@
 import { View, Text, TouchableOpacity, StyleSheet, StatusBar } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import React from 'react';
-
+import { Link } from 'expo-router'
 const Header = () => {
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -11,9 +11,11 @@ const Header = () => {
         {/* Top section: App Name & Add Button */}
         <View style={styles.topSection}>
           <Text style={styles.appName}>CoinoMe</Text>
+          <Link href='/add-expense' asChild>
           <TouchableOpacity style={styles.addButton}>
             <Text style={styles.addButtonText}>+ Add</Text>
           </TouchableOpacity>
+          </Link>
         </View>
 
         {/* Date Section */}
